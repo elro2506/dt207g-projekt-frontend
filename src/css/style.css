@@ -33,10 +33,10 @@ body {
     color: white;
 }
 
-.breakfast {
+.breakfast, .lunch, .fika {
     padding: 1rem;
 }
-#breakfast {
+#breakfast, #lunch, #fika {
     display: flex;
     justify-content: space-between;
     align-items: center;
