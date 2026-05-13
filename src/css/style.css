@@ -10,6 +10,31 @@ body {
     min-height: 100vh;
 }
 
+.kursiva-rubriker-h1 {
+    font-family: "Bonheur Royale", cursive;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.kursiva-rubriker-h2 {
+    font-family: "Bonheur Royale", cursive;
+    font-size: 2.5rem;
+}
+
+.kursiva-rubriker-h3 {
+    font-family: "Bonheur Royale", cursive;
+    font-size: 2rem;
+}
+
+.centrera {
+    text-align: center;
+}
+
+.centrera img {
+    width: 100%;
+    max-width: 300px;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -35,6 +60,7 @@ nav ul a {
 
 nav ul a:hover {
     color: #723D00;
+    text-decoration: underline;
 }
 
 .active {
@@ -43,6 +69,15 @@ nav ul a:hover {
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/hero.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-image2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/historia.jpg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -96,6 +131,7 @@ main {
     flex-wrap: wrap;
     margin-bottom: 30px;
     margin-top: 30px;
+
 }
 
 .boxes {
@@ -108,10 +144,12 @@ main {
     flex-direction: column;
     gap: 1rem;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 .boxes:hover {
     transform: translateY(-5px);
+    background-color: #946a37;
 }
 
 .boxes img {
