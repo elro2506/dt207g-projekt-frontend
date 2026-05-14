@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/logotyp.svg">
+    <title>Logga in</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li><a href="about.html">Om oss</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="centrera">
+            <h1 class="not-centrera">Logga in</h1>
+           <p class="not-centrera">På denna inloggningssida har du som medarbetare möjlighet att logga in för att se, ändra, lägga till eller ta bort
+            rader från menyn. Om du saknar en inloggning behöver du ta kontakt med <a href="mailto:hr@cafeblabar.se">hr@cafeblabar.se</a> Har du frågor
+            om funktionerna vill vi att du tar kontakt med närmsta chef för en genomgång.
+           </p><br>
+            <form id="login">
+                <label for="username">Användarnamn:</label>
+                <input type="text" id="username" placeholder="Användarnamn">
+                <label for="password">Lösenord:</label>
+                <input type="password" id="password" placeholder="Lösenord">
+                <!--Så det blir prickar i stället för text-->
+                <button type="submit" class="login-logout">Logga in</button>
+            </form><br><br><br>
+            <div class="centrera">
+        <img src="/logotyp.png" alt="logotyp">
+        </div>
+        </div>
+    </main>
+    <footer>
+        <h4>Café Blåbär</h4>
+        <p>Storgatan 1, Stockholm</p>
+        <p><a href="tel:+46771001122">0771-00 11 22</a></p>
+        <p><a href="mailto:hej@cafeblabar.se">hej@cafeblabar.se</a></p>
+        <a href="login.html">Personalinloggning</a>
+    </footer>
+</body>
+
+</html>

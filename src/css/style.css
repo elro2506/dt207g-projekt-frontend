@@ -195,6 +195,45 @@ main {
     padding-left: 1rem;
     margin-bottom: 20px;
 }
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 0.5px solid black;
+    padding: 2rem;
+    background-color: #FAE9D2;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 0.5px solid black;
+}
+
+.login-logout {
+    background-color: #723D00;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    font-size: 1.5rem;
+    border: 0.5px solid black;
+}
+
+.not-centrera {
+    text-align: left;
+   }
 
 footer {
     background-color: #FAE9D2;
