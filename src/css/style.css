@@ -235,6 +235,21 @@ input {
     text-align: left;
    }
 
+
+   .katter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+   }
+
+   .katter img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+   }
+
 footer {
     background-color: #FAE9D2;
     padding: 1rem;
