@@ -12,14 +12,17 @@
 
 <body>
     <header>
-        <nav>
-            <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
-            <ul>
-                <li><a href="index.html">Start</a></li>
-                <li><a href="menu.html">Meny</a></li>
-                <li><a href="about.html">Om oss</a></li>
-            </ul>
-        </nav>
+        <div class="topnav" id="myTopnav">
+            <nav>
+                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="menu.html">Meny</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="responsivNav()">≡</a>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="centrera">
@@ -31,14 +34,17 @@
             <form id="login">
                 <label for="username">Användarnamn:</label>
                 <input type="text" id="username" placeholder="Användarnamn">
-                <label for="password">Lösenord:</label>
-                <input type="password" id="password" placeholder="Lösenord">
-                <!--Så det blir prickar i stället för text-->
+                <label for="password">Lösenord:</label><!--Så det blir prickar i stället för text-->
+                <input type="password" id="password" placeholder="Lösenord"><br>
+                
                 <button type="submit" class="login-logout">Logga in</button>
             </form><br><br><br>
             <div class="centrera">
         <img src="/logotyp.png" alt="logotyp">
         </div>
+        </div>
+        <div class="centrera">
+        <img src="/logotyp.png" alt="logotyp">
         </div>
     </main>
     <footer>
@@ -48,6 +54,14 @@
         <p><a href="mailto:hej@cafeblabar.se">hej@cafeblabar.se</a></p>
         <a href="login.html">Personalinloggning</a>
     </footer>
+    <script>function responsivNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }</script>
 </body>
 
 </html>

@@ -12,14 +12,17 @@
 
 <body>
     <header>
-        <nav>
-            <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
-            <ul>
-                <li><a href="index.html" class="active">Start</a></li>
-                <li><a href="menu.html">Meny</a></li>
-                <li><a href="about.html">Om oss</a></li>
-            </ul>
-        </nav>
+        <div class="topnav" id="myTopnav">
+            <nav>
+                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+                <ul>
+                    <li><a href="index.html" class="active">Start</a></li>
+                    <li><a href="menu.html">Meny</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="responsivNav()">≡</a>
+            </nav>
+        </div>
     </header>
     <div class="hero-image">
         <div class="hero-text">
@@ -61,6 +64,9 @@
             sedan 1935?
         </p>
         <p>På vårt café får du plats med din barnvagn eller rullstol.</p>
+        <div class="centrera">
+        <img src="/logotyp.png" alt="logotyp">
+        </div>
     </main>
 
     <footer>
@@ -71,6 +77,14 @@
         <p>Öppet vardagar 7-20, helger och röda dagar 7-16</p>
         <a href="login.html">Personalinloggning</a>
     </footer>
+    <script>function responsivNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }</script>
 </body>
 
 </html>

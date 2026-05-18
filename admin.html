@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/logotyp.svg">
+    <title>Personalsidor</title>
+</head>
+
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <nav>
+                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="menu.html">Meny</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="responsivNav()">≡</a>
+            </nav>
+        </div>
+    </header>
+   
+    <main>
+        <h1 class="centrera">Lägg till ny rätt i menyn</h1>
+        <form id="menu-form">
+            <label for="username">Namn på rätt:</label>
+            <input type="text" id="title">
+            <label for="username">Pris (endast siffror):</label>
+            <input type="text" id="price">
+            <label for="category">Kategori:</label>
+            <select id="category"> //Snyggare med lista att välja bland, undviker olika stavningar på samma sak
+                <option>Frukost</option>
+                <option>Lunch</option>
+                <option>Fika</option>
+            </select><br>
+            <button type="submit" class="login-logout">Lägg till rätten</button>
+        </form>
+        <div class="centrera">
+        <img src="/logotyp.png" alt="logotyp">
+        </div>
+    </main>
+
+    <footer>
+        <h4>Café Blåbär</h4>
+        <p>Storgatan 1, Stockholm</p>
+        <p><a href="tel:+46771001122">0771-00 11 22</a></p>
+        <p><a href="mailto:hej@cafeblabar.se">hej@cafeblabar.se</a></p>
+        <p>Öppet vardagar 7-20, helger och röda dagar 7-16</p>
+        <a href="login.html">Personalinloggning</a>
+    </footer>
+    <script type="module" src="src/js/admin.js"></script>
+    <script>function responsivNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }</script>
+</body>
+
+</html>

@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/logotyp.svg">
     <title>Katter på Café Blåbär</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="index.html"><img src="/logotyp.png" alt="logotyp" width="100px"></a>
-            <ul>
-                <li><a href="index.html">Start</a></li>
-                <li><a href="menu.html">Meny</a></li>
-                <li><a href="about.html" class="active">Om oss</a></li>
-            </ul>
-        </nav>
+        <div class="topnav" id="myTopnav">
+            <nav>
+                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+                <ul>
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="menu.html">Meny</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="responsivNav()">≡</a>
+            </nav>
+        </div>
     </header>
     <main>
         <h1 class="kursiva-rubriker-h1">Café Blåbär - ett kattvänligt café</h1>
@@ -50,7 +54,7 @@
             som inte tar upp gästernas sittplatser, och detta underlättar även för pälsallergiker som vill kunna sitta i
             caféet. Vi hoppas att ni är lika glada för deras
             comeback som vi är!
-        </p>
+        </p><br>
         <section class="katter">
             <img src="/bamse1.jfif" alt="Katten Bamse">
             <img src="/kylling1.jfif" alt="Katten Kylling">
@@ -65,10 +69,20 @@
 
     <footer>
         <h4>Café Blåbär</h4>
-        <p>Stora långgatan 1, Stockholm</p>
+        <p>Storgatan 1, Stockholm</p>
         <p><a href="tel:+46771001122">0771-00 11 22</a></p>
         <p><a href="mailto:hej@cafeblabar.se">hej@cafeblabar.se</a></p>
+        <p>Öppet vardagar 7-20, helger och röda dagar 7-16</p>
+        <a href="login.html">Personalinloggning</a>
     </footer>
+    <script>function responsivNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }</script>
 </body>
 
 </html>

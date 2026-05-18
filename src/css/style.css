@@ -45,14 +45,17 @@ body {
     padding: 1rem;
 }
 
-#breakfast,
-#lunch,
-#fika {
+.menu-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid white;
     padding-right: 1rem;
+}
+
+hr {
+    border: 1px solid #723D00;
+    margin-top: 20px;
 }
 
 .centrera {
@@ -91,6 +94,10 @@ nav ul a {
 nav ul a:hover {
     color: #723D00;
     text-decoration: underline;
+}
+
+.topnav .icon {
+    display: none;
 }
 
 .active {
@@ -264,6 +271,15 @@ input {
     border-radius: 50px;
 }
 
+#menu-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#category {
+    padding: 1rem;
+}
+
 footer {
     background-color: #FAE9D2;
     padding: 1rem;
@@ -280,7 +296,7 @@ footer a {
     color: black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 
     main,
     section {
@@ -337,4 +353,49 @@ footer a {
     footer {
         line-height: 1.4;
     }
+
+    nav ul {
+        display: none;
+    }
+
+    .topnav .icon {
+        display: block;
+        font-size: 2rem;
+        text-decoration: none;
+        color: black;
+          right: 2rem;
+        top: 3.75rem;
+    }
+
+    .topnav.responsive nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topnav.responsive ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .topnav.responsive ul a {
+        display: block;
+
+    }
+    .topnav.responsive ul a:hover {
+        background-color: #723D00;
+    color: white;
+    text-decoration: none;
+    }
+/*Så att ikonen inte följer med i nedfällda menyn*/
+    .topnav.responsive .icon {
+        position: absolute;
+      
+    }
+
+    .topnav {
+        position: relative;
+    }
+
 }
