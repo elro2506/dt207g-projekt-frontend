@@ -247,8 +247,8 @@ input {
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
-    max-width: 200px;
-    font-size: 1.5rem;
+    max-width: 300px;
+    font-size: 1.2rem;
     border: 0.5px solid black;
 }
 
