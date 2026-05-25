@@ -159,3 +159,7 @@ async function editItem(id) {
     });
 
 }
+
+//Eftersom jag har type module på admin.js-länken så kopplar jag funktionen till window i stället
+window.deleteItem = deleteItem;
+window.editItem = editItem;
