@@ -4,7 +4,7 @@
 const fikaContainer = document.getElementById("fika-container");
 const breakfastContainer = document.getElementById("breakfast-container");
 const lunchContainer = document.getElementById("lunch-container");
-const API_URL = "https://dt207g-projekt-backend-pw9d.onrender.com/";
+const API_URL = "https://dt207g-projekt-backend-pw9d.onrender.com";
 
 //Funktion för att hämta menyn från mitt API
 async function getMenu() {
