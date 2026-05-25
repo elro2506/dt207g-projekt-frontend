@@ -5,7 +5,7 @@ const fikaContainer = document.getElementById("fika-container-admin");
 const breakfastContainer = document.getElementById("breakfast-container-admin");
 const lunchContainer = document.getElementById("lunch-container-admin");
 const token = sessionStorage.getItem("website_token");
-const API_URL = "https://dt207-labb4-backend.onrender.com";
+const API_URL = "https://dt207g-projekt-backend-pw9d.onrender.com/";
 
 if (!token) {
     window.location.href = "login.html";

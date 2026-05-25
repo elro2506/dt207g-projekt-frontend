@@ -1,6 +1,6 @@
 "use strict";
 const form = document.getElementById("login");
-const API_URL = "https://dt207-labb4-backend.onrender.com";
+const API_URL = "https://dt207g-projekt-backend-pw9d.onrender.com/";
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
