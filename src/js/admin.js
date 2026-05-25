@@ -4,18 +4,46 @@
 const fikaContainer = document.getElementById("fika-container-admin");
 const breakfastContainer = document.getElementById("breakfast-container-admin");
 const lunchContainer = document.getElementById("lunch-container-admin");
+const token = sessionStorage.getItem("website_token");
+
+if (!token) {
+    window.location.href = "login.html";
+}
+
+async function getAdmin() {
+    try {
+        const response = await fetch("http://localhost:3000/api/admin",
+            {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        console.log(data);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+getAdmin();
 
 //Funktion för att hämta menyn från mitt API
 async function getMenu() {
     //Hämtar datan från mitt backend
     const response = await fetch("http://localhost:3000/api/menu");
-//Detta gör om JSON-datan till JavaScript-objekt
+    //Detta gör om JSON-datan till JavaScript-objekt
     const menu = await response.json();
 
     //Loopar igenom alla maträtter som läggs in
     menu.forEach(item => {
         //Om kategorin är frukost så skrivs innehållet ut i frukost-containern
-        if(item.category === "Frukost") {
+        if (item.category === "Frukost") {
             breakfastContainer.innerHTML += `
             <div class="menu-item">
             <p>${item.title} - ${item.price} kr</p><div>
@@ -24,7 +52,7 @@ async function getMenu() {
             </div>
             `;
 
-        }else if(item.category === "Lunch") {
+        } else if (item.category === "Lunch") {
             lunchContainer.innerHTML += `
             <div class="menu-item">
             <p>${item.title} - ${item.price} kr</p><div>
@@ -32,7 +60,7 @@ async function getMenu() {
             <button class="edit-btn" onclick="editItem('${item._id}')">Redigera</button></div>
             </div>
             `;
-        } else if(item.category === "Fika") {
+        } else if (item.category === "Fika") {
             fikaContainer.innerHTML += `
             <div class="menu-item">
             <p>${item.title} - ${item.price} kr</p><div>
@@ -59,17 +87,32 @@ form.addEventListener("submit", async (e) => {
         price: document.getElementById("price").value,
         category: document.getElementById("category").value
     };
-//Datan skickas till backend
-    await fetch("http://localhost:3000/api/menu", {
-        //Metoden för att lägga till ny data
-        method: "POST",
-//Detta talar om så att datan skickas som JSON
-        headers: {
-            "Content-type": "application/json"
-        },
-//Gör om Javascript-objetet till JSON
-        body: JSON.stringify(newItem)
-    });
+
+    if (currentEditId) {
+        await fetch(`http://localhost:3000/api/menu/${currentEditId}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json"
+            },
+
+            body: JSON.stringify(newItem)
+        });
+
+        currentEditId = null;
+    } else {
+
+        //Datan skickas till backend
+        await fetch("http://localhost:3000/api/menu", {
+            //Metoden för att lägga till ny data
+            method: "POST",
+            //Detta talar om så att datan skickas som JSON
+            headers: {
+                "Content-type": "application/json"
+            },
+            //Gör om Javascript-objetet till JSON
+            body: JSON.stringify(newItem)
+        });
+    }
     location.reload();
 });
 
@@ -79,3 +122,39 @@ async function deleteItem(id) {
     });
     location.reload();
 }
+
+let currentEditId = null;
+
+async function editItem(id) {
+    //Hämtar hela menyn från mitt API
+    const response = await fetch("http://localhost:3000/api/menu");
+
+    //Gör om JSON till JavaScript
+    const menu = await response.json();
+
+    //Identifierar rätt maträtt utifrån deras id
+    const itemToEdit = menu.find(item => item._id === id);
+
+    //Fyller formuläret längre ner med nuvarande information
+    document.getElementById("title").value = itemToEdit.title;
+    document.getElementById("price").value = itemToEdit.price;
+    document.getElementById("category").value = itemToEdit.category;
+
+    //Sparar id på den rätten som man redigerar
+    currentEditId = id;
+
+    //Vill att man scrollar ner till formuläret
+    form.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+const logoutButton = document.getElementById("logout-button");
+
+logoutButton.addEventListener("click", () => {
+    //Tar bort token vid utloggning
+    sessionStorage.removeItem("website_token");
+    //Skickar tillbaka medarbetaren till login-sidan
+    window.location.href = "login.html";
+});
