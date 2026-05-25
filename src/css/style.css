@@ -164,6 +164,10 @@ nav ul a:hover {
     color: black;
 }
 
+.hero-rubrik {
+    font-size: 50px;
+}
+
 main {
     width: 100%;
     max-width: 1100px;

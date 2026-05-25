@@ -1,4 +1,6 @@
+"use strict";
 const form = document.getElementById("login");
+const API_URL = "https://dt207-labb4-backend.onrender.com";
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -8,7 +10,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
         const response = await fetch(
-            "http://localhost:3000/api/login",
+            `${API_URL}/api/login`,
             {
                 method: "POST",
                 headers: {

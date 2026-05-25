@@ -5,6 +5,7 @@ const fikaContainer = document.getElementById("fika-container-admin");
 const breakfastContainer = document.getElementById("breakfast-container-admin");
 const lunchContainer = document.getElementById("lunch-container-admin");
 const token = sessionStorage.getItem("website_token");
+const API_URL = "https://dt207-labb4-backend.onrender.com";
 
 if (!token) {
     window.location.href = "login.html";
@@ -12,10 +13,11 @@ if (!token) {
 
 async function getAdmin() {
     try {
-        const response = await fetch("http://localhost:3000/api/admin",
+        const response = await fetch(`${API_URL}/api/admin`,
             {
                 method: "GET",
                 headers: {
+                    //Skickar med JWT-token för att verifiera inloggad användare
                     Authorization: `Bearer ${token}`
                 }
             }
@@ -36,7 +38,7 @@ getAdmin();
 //Funktion för att hämta menyn från mitt API
 async function getMenu() {
     //Hämtar datan från mitt backend
-    const response = await fetch("http://localhost:3000/api/menu");
+    const response = await fetch(`${API_URL}/api/menu`);
     //Detta gör om JSON-datan till JavaScript-objekt
     const menu = await response.json();
 
@@ -89,10 +91,12 @@ form.addEventListener("submit", async (e) => {
     };
 
     if (currentEditId) {
-        await fetch(`http://localhost:3000/api/menu/${currentEditId}`, {
+        await fetch(`${API_URL}/api/menu/${currentEditId}`, {
             method: "PUT",
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                //Skickar med JWT-token för att verifiera inloggad användare
+                Authorization: `Bearer ${token}`
             },
 
             body: JSON.stringify(newItem)
@@ -102,12 +106,14 @@ form.addEventListener("submit", async (e) => {
     } else {
 
         //Datan skickas till backend
-        await fetch("http://localhost:3000/api/menu", {
+        await fetch(`${API_URL}/api/menu`, {
             //Metoden för att lägga till ny data
             method: "POST",
             //Detta talar om så att datan skickas som JSON
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                //Skickar med JWT-token för att verifiera inloggad användare
+                Authorization: `Bearer ${token}`
             },
             //Gör om Javascript-objetet till JSON
             body: JSON.stringify(newItem)
@@ -117,8 +123,12 @@ form.addEventListener("submit", async (e) => {
 });
 
 async function deleteItem(id) {
-    await fetch(`http://localhost:3000/api/menu/${id}`, {
-        method: "DELETE"
+    await fetch(`${API_URL}/api/menu/${id}`, {
+        method: "DELETE",
+        headers: {
+            //Skickar med JWT-token för att verifiera inloggad användare
+            Authorization: `Bearer ${token}`
+        }
     });
     location.reload();
 }
@@ -127,7 +137,7 @@ let currentEditId = null;
 
 async function editItem(id) {
     //Hämtar hela menyn från mitt API
-    const response = await fetch("http://localhost:3000/api/menu");
+    const response = await fetch(`${API_URL}/api/menu`);
 
     //Gör om JSON till JavaScript
     const menu = await response.json();
@@ -149,12 +159,3 @@ async function editItem(id) {
     });
 
 }
-
-const logoutButton = document.getElementById("logout-button");
-
-logoutButton.addEventListener("click", () => {
-    //Tar bort token vid utloggning
-    sessionStorage.removeItem("website_token");
-    //Skickar tillbaka medarbetaren till login-sidan
-    window.location.href = "login.html";
-});

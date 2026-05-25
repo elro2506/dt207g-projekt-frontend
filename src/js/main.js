@@ -1,4 +1,6 @@
+"use strict";
 const navigering = document.getElementById("navigering");
+const API_URL = "https://dt207-labb4-backend.onrender.com";
 
 document.addEventListener("DOMContentLoaded", init);
 

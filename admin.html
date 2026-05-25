@@ -14,7 +14,7 @@
     <header>
         <div class="topnav" id="myTopnav">
             <nav>
-                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100px"></a>
+                <a href="index.html"><img src="/logotyp.svg" alt="logotyp" width="100"></a>
                 <ul id="navigering">
                     <li><a href="index.html">Start</a></li>
                     <li><a href="menu.html">Meny</a></li>
@@ -24,7 +24,7 @@
             </nav>
         </div>
     </header>
-   
+
     <main>
         <h1>Aktuell meny</h1>
         <p>Här kan personal se över menyutbudet och lägga till, ändra eller ta bort rätter.</p><br>
@@ -35,17 +35,17 @@
 
             <h2>Lunch</h2>
             <div id="lunch-container-admin"></div><br>
-           <h2>Fika</h2>
+            <h2>Fika</h2>
             <div id="fika-container-admin"></div><br><br>
         </section>
         <h1>Uppdatera/lägg till ny rätt i menyn</h1>
         <form id="menu-form">
-            <label for="username">Namn på rätt:</label>
+            <label for="title">Namn på rätt:</label>
             <input type="text" id="title">
-            <label for="username">Pris (endast siffror):</label>
-            <input type="text" id="price">
+            <label for="price">Pris (endast siffror):</label>
+            <input type="number" id="price">
             <label for="category">Kategori:</label>
-            <select id="category"> //Snyggare med lista att välja bland, undviker olika stavningar på samma sak
+            <select id="category"> <!--Snyggare med lista att välja bland, undviker olika stavningar på samma sak-->
                 <option>Frukost</option>
                 <option>Lunch</option>
                 <option>Fika</option>
@@ -53,7 +53,7 @@
             <button type="submit" class="login-logout">Lägg till/uppdatera rätten</button>
         </form>
         <div class="centrera">
-        <img src="/logotyp.png" alt="logotyp">
+            <img src="/logotyp.png" alt="logotyp">
         </div>
     </main>
 
@@ -64,7 +64,7 @@
         <p><a href="mailto:hej@cafeblabar.se">hej@cafeblabar.se</a></p>
         <p>Öppet vardagar 7-20, helger och röda dagar 7-16</p>
         <a href="login.html">Personalinloggning</a>
-       </footer>
+    </footer>
     <script src="src/js/admin.js"></script>
     <script>function responsivNav() {
             var x = document.getElementById("myTopnav");
@@ -74,7 +74,7 @@
                 x.className = "topnav";
             }
         }</script>
-        <script src="src/js/main.js"></script>
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>
