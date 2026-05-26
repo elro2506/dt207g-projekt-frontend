@@ -1,14 +1,16 @@
 "use strict";
+//Hämtar navigeringslistan
 const navigering = document.getElementById("navigering");
 const API_URL = "https://dt207g-projekt-backend-pw9d.onrender.com";
 
 document.addEventListener("DOMContentLoaded", init);
 
+//Startar denna funktion när sidan laddats
 function init() {
   changeNavigering();
 }
 
-
+//Funktion där navigeringsmenyn ändras beroende på om man är inloggad eller inte
 function changeNavigering() {
   if (sessionStorage.getItem("website_token")) {
     navigering.innerHTML = `
@@ -24,6 +26,7 @@ function changeNavigering() {
     `
   }
 
+  //Om det finns en logga ut-knapp så tas token bort vid klicket, förhindrar att obehöriga kan vara inne på adminsidan
   const logoutBtn = document.getElementById("logout-button");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
