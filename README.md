@@ -22,17 +22,17 @@ Café Blåbär är ett fiktivt café i Stockholm som behövde en hemsida där be
 - Netlify för publicering
 
 ## Struktur på webbplatsen
-index.html - startsida
-menu.html - menyn
-about.html - om-sidan
-cats.html - kattsidan
-login.html - sida med inloggningsformulär
-admin.html - adminsidan
-style.css - all styling
-menu.js - hämtar och skriver ut den publika menyn
-login.js - hanterar själva inloggningen
-admin.js - funktionalitetn för menyn (inte navigeringsmenyn)
-main.js - hanterar navigeringen och utloggning
+- index.html - startsida
+- menu.html - menyn
+- about.html - om-sidan
+- cats.html - kattsidan
+- login.html - sida med inloggningsformulär
+- admin.html - adminsidan
+- style.css - all styling
+- menu.js - hämtar och skriver ut den publika menyn
+- login.js - hanterar själva inloggningen
+- admin.js - funktionalitetn för menyn (inte navigeringsmenyn)
+- main.js - hanterar navigeringen och utloggning
 
 ### Mina sidor
 Backend/API: https://dt207g-projekt-backend-pw9d.onrender.com/
