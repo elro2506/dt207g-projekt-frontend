@@ -35,7 +35,7 @@ Café Blåbär är ett fiktivt café i Stockholm som behövde en hemsida där be
 - main.js - hanterar navigeringen och utloggning
 
 ### Mina sidor
-Backend/API: https://dt207g-projekt-backend-pw9d.onrender.com/
-Café Blåbärs webbplats: https://dt207g-projekt.netlify.app/
+- Backend/API: https://dt207g-projekt-backend-pw9d.onrender.com/
+- Café Blåbärs webbplats: https://dt207g-projekt.netlify.app/
 
 Smaklig måltid!
