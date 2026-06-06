@@ -5,16 +5,12 @@
     line-height: 1.5;
 }
 
-:root {
-    overscroll-behavior: none;
-}
-
 body,
 html {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F6F2ED;
-    overscroll-behavior: none;
+    overflow-x: hidden;
 }
 
 body {
