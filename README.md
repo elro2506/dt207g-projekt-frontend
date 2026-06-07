@@ -1,5 +1,5 @@
 # DT207G - Projektarbete - Elin Ronda
-Detta repo berör min frontend-del av projektarbetet.
+Detta repo berör min frontend-del av projektarbetet. Vänligen starta backendservern vars länk finns längst ner i README.
 
 # Café Blåbär
 Café Blåbär är ett fiktivt café i Stockholm som behövde en hemsida där besökare kan se ett menyutbud. Utbudet uppdateras och raderas av behörig personal med inloggning som är skyddad med en token.

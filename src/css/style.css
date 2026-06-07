@@ -7,11 +7,10 @@
 
 body,
 html {
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    max-width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F6F2ED;
-    overflow-x: hidden;
 }
 
 body {
@@ -303,10 +302,17 @@ footer a {
 }
 
 @media screen and (max-width: 900px) {
+* {
+    box-sizing: border-box;
+}
+   section {
+        margin: 0;
+    }
 
-    main,
-    section {
-        margin: 15px;
+    main {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 1rem;
     }
 
     .hero-text h1 {
